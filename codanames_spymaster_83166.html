@@ -1,0 +1,102 @@
+<head>
+  <meta charset="utf-8">
+  <title>Codenames Spymaster</title>
+  <link href='https://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <style>
+
+    body {
+      margin-top: 40px;
+       background-color:  #ccffff;
+        background-image: url("https://d3fa68hw0m2vcc.cloudfront.net/fc4/133767657.jpeg");
+        background-image: linear-gradient(red, yellow);
+       background: linear-gradient(0deg, rgba(250,128,131,1) 0%, rgba(14,130,167,0.4987788865546218) 100%);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      font-family: 'Vollkorn'; font-size: 30px;
+      }
+    td{
+      border: 1px solid;
+      width: 100px;
+      height: 100px;
+      background-color: #D8CC98;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    button{
+      margin-top: 20px;
+      height: 30px;
+      width: 527px;
+      background-color: #D8CC98;
+      border-radius: 0px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+    }
+
+    h3{
+        color:black;
+    }
+    a:link {
+      color: black
+    }
+
+    a:visited {
+      color: black;
+    }
+
+    a:hover {
+      background-color: lightgreen;
+      color: white;
+    }
+
+    a:active {
+      background-color: black;
+    } 
+
+  </style>
+  </head>
+  <body>
+  <center>
+      <h1 id = "titl"> Codenames Spymaster </h1>
+    <table id = "to-copy">
+    <tr>
+      <td id = "t1" style = "background-color:#0E82A7" style = "background-color:#F14448" style = "background-color:#3F3E39" style = "background-color:#0E82A7" style = "background-color:#F14448" style = "background-color:#D8CC98" style = "background-color:#F14448" style = "background-color:#0E82A7"></td>
+      <td id = "t2" style = "background-color:#F14448" style = "background-color:#F14448" style = "background-color:#0E82A7" style = "background-color:#D8CC98" style = "background-color:#0E82A7" style = "background-color:#F14448" style = "background-color:#D8CC98" style = "background-color:#D8CC98"></td>
+      <td id = "t3" style = "background-color:#F14448" style = "background-color:#0E82A7" style = "background-color:#0E82A7" style = "background-color:#F14448" style = "background-color:#F14448" style = "background-color:#0E82A7" style = "background-color:#D8CC98" style = "background-color:#D8CC98"></td>
+      <td id = "t4" style = "background-color:#0E82A7" style = "background-color:#D8CC98" style = "background-color:#F14448" style = "background-color:#D8CC98" style = "background-color:#F14448" style = "background-color:#D8CC98" style = "background-color:#F14448" style = "background-color:#D8CC98"></td>
+      <td id = "t5" style = "background-color:#0E82A7" style = "background-color:#0E82A7" style = "background-color:#0E82A7" style = "background-color:#0E82A7" style = "background-color:#0E82A7" style = "background-color:#0E82A7" style = "background-color:#F14448" style = "background-color:#0E82A7"></td>
+    </tr>
+    <tr>
+      <td id = "t6" style = "background-color:#D8CC98" style = "background-color:#F14448" style = "background-color:#0E82A7" style = "background-color:#3F3E39" style = "background-color:#0E82A7" style = "background-color:#D8CC98" style = "background-color:#3F3E39" style = "background-color:#D8CC98"></td>
+      <td id = "t7" style = "background-color:#0E82A7" style = "background-color:#0E82A7" style = "background-color:#D8CC98" style = "background-color:#0E82A7" style = "background-color:#0E82A7" style = "background-color:#D8CC98" style = "background-color:#D8CC98" style = "background-color:#F14448"></td>
+      <td id = "t8" style = "background-color:#D8CC98" style = "background-color:#D8CC98" style = "background-color:#D8CC98" style = "background-color:#F14448" style = "background-color:#F14448" style = "background-color:#0E82A7" style = "background-color:#F14448" style = "background-color:#0E82A7"></td>
+      <td id = "t9" style = "background-color:#0E82A7" style = "background-color:#D8CC98" style = "background-color:#D8CC98" style = "background-color:#D8CC98" style = "background-color:#D8CC98" style = "background-color:#0E82A7" style = "background-color:#F14448" style = "background-color:#F14448"></td>
+      <td id = "t10" style = "background-color:#0E82A7" style = "background-color:#D8CC98" style = "background-color:#F14448" style = "background-color:#F14448" style = "background-color:#D8CC98" style = "background-color:#F14448" style = "background-color:#0E82A7" style = "background-color:#F14448"></td>
+    </tr>
+     <tr>
+      <td id = "t11" style = "background-color:#F14448" style = "background-color:#D8CC98" style = "background-color:#D8CC98" style = "background-color:#D8CC98" style = "background-color:#0E82A7" style = "background-color:#D8CC98" style = "background-color:#D8CC98" style = "background-color:#F14448"></td>
+      <td id = "t12" style = "background-color:#D8CC98" style = "background-color:#0E82A7" style = "background-color:#F14448" style = "background-color:#F14448" style = "background-color:#0E82A7" style = "background-color:#3F3E39" style = "background-color:#0E82A7" style = "background-color:#0E82A7"></td>
+      <td id = "t13" style = "background-color:#D8CC98" style = "background-color:#F14448" style = "background-color:#F14448" style = "background-color:#0E82A7" style = "background-color:#0E82A7" style = "background-color:#0E82A7" style = "background-color:#F14448" style = "background-color:#3F3E39"></td>
+      <td id = "t14" style = "background-color:#D8CC98" style = "background-color:#0E82A7" style = "background-color:#0E82A7" style = "background-color:#0E82A7" style = "background-color:#F14448" style = "background-color:#F14448" style = "background-color:#0E82A7" style = "background-color:#F14448"></td>
+      <td id = "t15" style = "background-color:#D8CC98" style = "background-color:#0E82A7" style = "background-color:#0E82A7" style = "background-color:#D8CC98" style = "background-color:#D8CC98" style = "background-color:#0E82A7" style = "background-color:#D8CC98" style = "background-color:#F14448"></td>
+    </tr>
+     <tr>
+      <td id = "t16" style = "background-color:#F14448" style = "background-color:#F14448" style = "background-color:#0E82A7" style = "background-color:#F14448" style = "background-color:#D8CC98" style = "background-color:#F14448" style = "background-color:#F14448" style = "background-color:#F14448"></td>
+      <td id = "t17" style = "background-color:#0E82A7" style = "background-color:#F14448" style = "background-color:#F14448" style = "background-color:#0E82A7" style = "background-color:#0E82A7" style = "background-color:#F14448" style = "background-color:#0E82A7" style = "background-color:#0E82A7"></td>
+      <td id = "t18" style = "background-color:#F14448" style = "background-color:#D8CC98" style = "background-color:#D8CC98" style = "background-color:#F14448" style = "background-color:#D8CC98" style = "background-color:#F14448" style = "background-color:#D8CC98" style = "background-color:#F14448"></td>
+      <td id = "t19" style = "background-color:#F14448" style = "background-color:#F14448" style = "background-color:#D8CC98" style = "background-color:#F14448" style = "background-color:#D8CC98" style = "background-color:#D8CC98" style = "background-color:#0E82A7" style = "background-color:#D8CC98"></td>
+      <td id = "t20" style = "background-color:#F14448" style = "background-color:#3F3E39" style = "background-color:#0E82A7" style = "background-color:#F14448" style = "background-color:#F14448" style = "background-color:#0E82A7" style = "background-color:#0E82A7" style = "background-color:#D8CC98"></td>
+    </tr>
+     <tr>
+      <td id = "t21" style = "background-color:#F14448" style = "background-color:#D8CC98" style = "background-color:#F14448" style = "background-color:#D8CC98" style = "background-color:#D8CC98" style = "background-color:#F14448" style = "background-color:#D8CC98" style = "background-color:#0E82A7"></td>
+      <td id = "t22" style = "background-color:#F14448" style = "background-color:#F14448" style = "background-color:#F14448" style = "background-color:#F14448" style = "background-color:#3F3E39" style = "background-color:#0E82A7" style = "background-color:#F14448" style = "background-color:#D8CC98"></td>
+      <td id = "t23" style = "background-color:#0E82A7" style = "background-color:#F14448" style = "background-color:#F14448" style = "background-color:#0E82A7" style = "background-color:#F14448" style = "background-color:#F14448" style = "background-color:#0E82A7" style = "background-color:#F14448"></td>
+      <td id = "t24" style = "background-color:#D8CC98" style = "background-color:#0E82A7" style = "background-color:#F14448" style = "background-color:#0E82A7" style = "background-color:#F14448" style = "background-color:#D8CC98" style = "background-color:#F14448" style = "background-color:#0E82A7"></td>
+      <td id = "t25" style = "background-color:#3F3E39" style = "background-color:#0E82A7" style = "background-color:#D8CC98" style = "background-color:#D8CC98" style = "background-color:#F14448" style = "background-color:#F14448" style = "background-color:#0E82A7" style = "background-color:#0E82A7"></td>
+    </tr>
+  </table>
+  <h5> made by <a href="mailto:ebenarie@gmail.com"> Elad Ben Arie </a> </h5>
+  </center>
+  </body>
+  
+  

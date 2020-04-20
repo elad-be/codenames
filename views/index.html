@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Codenames Spymaster</title>
+  <link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src=" https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js" ></script>
+  <style>
+
+body {
+  margin-top: 40px;
+   background-color:  #ccffff;
+    background-image: url("https://d3fa68hw0m2vcc.cloudfront.net/fc4/133767657.jpeg");
+    background-image: linear-gradient(red, yellow);
+   background: linear-gradient(0deg, rgba(250,128,131,1) 0%, rgba(14,130,167,0.4987788865546218) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Vollkorn'; font-size: 30px;
+  }
+td{
+  border: 1px solid;
+  width: 100px;
+  height: 100px;
+  background-color: #D8CC98;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button{
+  margin-top: 20px;
+  height: 30px;
+  width: 100px;
+  background-color: #D8CC98;
+  border-radius: 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+    
+     #begginer{
+      width:150px;
+    }
+input[type=text]{
+width: 300px;
+
+}
+    
+span{
+      --background-color:#25D366;
+  height: 50px;
+  width: 100px;
+  font-size: 20px;
+    }
+h3{
+    color:black;
+}
+
+a:link {
+  color: black
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  background-color: lightgreen;
+  color: white;
+}
+
+a:active {
+  background-color: black;
+} 
+
+</style>
+</head>
+
+<body>
+   <center>
+    <h1 id = "titl"> Codenames Spymaster </h1>
+  <table id = "to-copy">
+  <tr>
+    <td id = "t1"></td>
+    <td id = "t2"></td>
+    <td id = "t3"></td>
+    <td id = "t4"></td>
+    <td id = "t5"></td>
+  </tr>
+  <tr>
+    <td id = "t6"></td>
+    <td id = "t7"></td>
+    <td id = "t8"></td>
+    <td id = "t9"></td>
+    <td id = "t10"></td>
+  </tr>
+   <tr>
+    <td id = "t11"></td>
+    <td id = "t12"></td>
+    <td id = "t13"></td>
+    <td id = "t14"></td>
+    <td id = "t15"></td>
+  </tr>
+   <tr>
+    <td id = "t16"></td>
+    <td id = "t17"></td>
+    <td id = "t18"></td>
+    <td id = "t19"></td>
+    <td id = "t20"></td>
+  </tr>
+   <tr>
+    <td id = "t21"></td>
+    <td id = "t22"></td>
+    <td id = "t23"></td>
+    <td id = "t24"></td>
+    <td id = "t25"></td>
+  </tr>
+</table>
+<input type="text" value="lala" id="myInput">
+<button onclick="myFunction()">Copy</button>
+     <span id = "share">
+     <a href="whatsapp://send?text=This is " data-action="share/whatsapp/share" id = "wa">Whatsapp</a>  
+     </span>
+<form method="post" action="/changeColor">
+    <input type="hidden" name="user" value = "<%= name %>" onclick="changeColor()">
+    <button type="submit" id = "begginer" value="change begginer" onclick="changeColor()">change begginer </button>
+</form>
+<h6> made by <a href="mailto:ebenarie@gmail.com"> Elad Ben Arie </a> </h6>
+</center>
+  
+  
+
+  <script>
+
+    function Regen(){
+
+      for (i=1; i<26; i++){
+        var cell = document.getElementById("t"+i);
+         cell.style.background = "#D8CC98";
+      }
+    var red = [], blue= [];
+    var bomb = -1;
+    while(red.length < 9){
+      var r = Math.floor(Math.random() * 25) + 1;
+      if(red.indexOf(r) === -1) red.push(r);
+    }
+
+    while(blue.length < 8){
+      var r = Math.floor(Math.random() * 25) + 1;
+      if(red.indexOf(r) === -1 && blue.indexOf(r) === -1) blue.push(r);
+    }
+
+    while (bomb == -1){
+      var r = Math.floor(Math.random() * 25) + 1;
+      if(red.indexOf(r) === -1 && blue.indexOf(r) === -1) bomb = r;
+    }   }
+
+    var start = "<%= begginer %>";
+    console.log(start);
+    function changeColor(){
+      for (i=1; i<26; i++){
+        if (start == "red"){
+        var cell = document.getElementById("t"+i);
+        if(boardColors[i-1] == "#F14448")
+          {
+            cell.style.background = "#0E82A7";
+          }
+        if(boardColors[i-1] == "#0E82A7"){
+        cell.style.background = "#F14448";}
+       }
+      else{
+        var cell = document.getElementById("t"+i);
+        cell.style.background = boardColors[i-1];
+       }
+      if (boardColors[i-1] == "#3F3E39"){
+        var bomb = document.getElementById("t"+i);
+        bomb.style.background = boardColors[i-1];
+      }
+        //console.log(start);
+      
+      }
+      if(start == "red") {start = "blue";} else{start = "red";}
+      
+    }
+       var boardColorsString = "<%= board %>";
+    
+    
+
+       var boardColors = boardColorsString.split(",");
+   changeColor();
+  
+
+       var filename = "<%= name %>";
+       document.getElementById("myInput").value = "https://lofty-descriptive-nut.glitch.me/?board=" + filename;
+      document.getElementById("wa").href="whatsapp://send?text=This is the Codenames Spymaster: https://lofty-descriptive-nut.glitch.me/?board=" + filename; 
+
+function myFunction() {
+  /* Get the text field */
+  var copyText = document.getElementById("myInput");
+
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+  /* Copy the text inside the text field */
+  document.execCommand("copy");
+
+  /* Alert the copied text */
+}
+    
+    console.log("im on glitch");
+  </script>
+
+</body>
+
+</html>
